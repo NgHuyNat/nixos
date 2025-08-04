@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       source = "colors.conf";
-      "$Scripts" = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts";
+      "$Scripts" = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts";
 
       general = {
         grace = 1;
