@@ -20,15 +20,15 @@ fi
 echo "🎨 Applying colors from: $WALLPAPER"
 
 # Save current wallpaper path
-mkdir -p ~/.config/hypr
-echo "$WALLPAPER" > ~/Workspaces/Config/nixos/current_wallpaper
+mkdir -p $HOME/.config/hypr
+echo "$WALLPAPER" > $HOME/Workspaces/Config/nixos/current_wallpaper
 
 # Set wallpaper
 "$SCRIPT_DIR/set-wallpaper.sh" "$WALLPAPER"
 
 # Generate and apply color templates
 echo "🔄 Generating color templates..."
-matugen image "$WALLPAPER" --config ~/.config/matugen/config.toml
+matugen image "$WALLPAPER" --config $HOME/.config/matugen/config.toml
 
 # Reload applications
 echo "♻️  Reloading applications..."

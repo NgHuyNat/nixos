@@ -35,7 +35,8 @@
         "$mainMod, J, togglesplit"
         "$mainMod, H, exec, pkill -SIGUSR1 waybar" # Hide Waybar
         "$mainMod SHIFT, E, exec, kitty yazi" # Yazi File Manager
-        "$mainMod Shift, S, exec, hyprshot -m region -o $HOME/Pictures/Screenshots"
+        "        # Screenshots - Using hyprshot directly
+        "$mainMod Shift, S, exec, hyprshot -m region -o ${config.home.homeDirectory}/Pictures/Screenshots""
         "$mainMod, PERIOD, exec, rofi -show emoji" # Select emoji
         "$mainMod, V, exec, cliphist list | rofi -dmenu -p \"Clipboard\" | cliphist decode | wl-copy"
         "$mainMod, R, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/wbrestart.sh"

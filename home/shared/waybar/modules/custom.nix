@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib,     "custom/tty" = {
+      format = " ";
+      on-click = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/WaybarScripts.sh --term";
+      tooltip = true;
+      tooltip-format = "Launch Terminal";
+    };
 {
   config.waybar.modules.custom = {
     # Custom modules
@@ -35,7 +40,7 @@
 
     "custom/settings" = {
       format = " ";
-      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/Kool_Quick_Settings.sh";
+      on-click = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/Kool_Quick_Settings.sh";
       tooltip = true;
       tooltip-format = "Launch KooL Hyprland Settings Menu";
     };
@@ -44,22 +49,22 @@
       format = " ";
       on-click = "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh";
       on-click-right = "$HOME/.config/hypr/UserScripts/WallpaperRandom.sh";
-      on-click-middle = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh";
+      on-click-middle = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh";
       tooltip = true;
       tooltip-format = "Left Click: Wallpaper Menu\nMiddle Click: Random wallpaper\nRight Click: Waybar Styles Menu";
     };
 
     "custom/hint" = {
       format = "󰺁 HINT!";
-      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/key-hints.sh";
-      on-click-right = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/key-binds.sh";
+      on-click = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/key-hints.sh";
+      on-click-right = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/key-binds.sh";
       tooltip = true;
       tooltip-format = "Left Click: Quick Tips\nRight Click: Keybinds";
     };
 
     "custom/dot_update" = {
       format = " 󰁈 ";
-      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/KooLsDotsUpdate.sh";
+      on-click = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/KooLsDotsUpdate.sh";
       tooltip = true;
       tooltip-format = "Check KooL Dots update\nIf available";
     };
@@ -71,7 +76,7 @@
       escape = true;
       exec-on-event = true;
       interval = 60;
-      exec = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh status";
+      exec = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh status";
       on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh toggle";
       on-click-right = "hyprlock";
     };

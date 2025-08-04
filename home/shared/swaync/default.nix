@@ -71,11 +71,11 @@
           "actions" = [
             {
               "label" = "󰐥";
-              "command" = "bash -c $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh";
+              "command" = "bash -c ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh";
             }
             {
               "label" = "󰌾";
-              "command" = "bash -c $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh";
+              "command" = "bash -c ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh";
             }
             {
               "label" = "󰍃";
@@ -83,7 +83,7 @@
             }
             {
               "label" = "󰀝";
-              "command" = "bash -c $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/airplane-mode.sh";
+              "command" = "bash -c ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/airplane-mode.sh";
             }
             {
               "label" = "󰝟";
@@ -96,7 +96,7 @@
 
     # CSS styling
     style = ''
-      @import '/home/nghuytan/Workspaces/Config/nixos/colors/swaync.css';
+      @import '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/swaync.css';
 
       /* Control Center Styles */
       @define-color text            @on_surface;

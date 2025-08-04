@@ -107,13 +107,13 @@
       tml = "tmux list-sessions";
       tmk = "tmux kill-session -t";
       tmd = "tmux detach";
-      tmcls = "rm -rf ~/.tmux/resurrect/*";
+      tmcls = "rm -rf ${config.home.homeDirectory}/.tmux/resurrect/*";
       
       # === DEVELOPMENT SHORTCUTS ===
-      wsp = "cd ~/Workspaces";
-      web = "cd ~/Workspaces/Web";
-      app = "cd ~/Workspaces/App";
-      lc = "cd ~/Workspaces/leetcode";
+      wsp = "cd ${config.home.homeDirectory}/Workspaces";
+      web = "cd ${config.home.homeDirectory}/Workspaces/Web";
+      app = "cd ${config.home.homeDirectory}/Workspaces/App";
+      lc = "cd ${config.home.homeDirectory}/Workspaces/leetcode";
       docs = "cd ~/Documents";
       down = "cd ~/Downloads";
       
@@ -236,7 +236,7 @@
       
       # === POWERLEVEL10K CONFIGURATION ===
       # To customize prompt, run: p10k configure
-      [[ ! -f ~/.config/dotfiles/zsh/p10k.zsh ]] || source ~/.config/dotfiles/zsh/p10k.zsh
+      [[ ! -f ${config.home.homeDirectory}/.config/dotfiles/zsh/p10k.zsh ]] || source ${config.home.homeDirectory}/.config/dotfiles/zsh/p10k.zsh
     '';
   };
 
