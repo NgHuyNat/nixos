@@ -1,4 +1,13 @@
-# waybar/modules/audio.nix - Audio-related modules
+# waybar/modules/audio.ni            on-click = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --toggle";
+      on-click-right = "pavucontrol";
+      on-scroll-up = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
+      on-scroll-down = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";lick =      on-click = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --toggle-mic";
+      on-click-right = "pavucontrol";
+      on-scroll-up = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --mic-inc";
+      on-scroll-down = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --mic-dec";config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --toggle";
+      on-click-right = "pavucontrol";
+      on-scroll-up = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
+      on-scroll-down = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";Audio-related modules
 { config, pkgs, lib, ... }:
 
 {

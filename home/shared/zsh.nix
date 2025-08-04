@@ -93,11 +93,11 @@
       gst = "git status";
       
       # === SYSTEM MANAGEMENT (Enhanced) ===
-      oh = "cd ~/ && echo 'Went back home'";
-      config = "cd $HOME/Workspaces/Config/nixos";
-      nixos-rebuild = "sudo nixos-rebuild switch --flake $HOME/Workspaces/Config/nixos --impure";
-      nixos-test = "sudo nixos-rebuild test --flake $HOME/Workspaces/Config/nixos --impure";
-      home-rebuild = "home-manager switch --flake $HOME/Workspaces/Config/nixos";
+      oh = "cd ${config.home.homeDirectory}/ && echo 'Went back home'";
+      config = "cd ${config.home.homeDirectory}/Workspaces/Config/nixos";
+      nixos-rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/Workspaces/Config/nixos --impure";
+      nixos-test = "sudo nixos-rebuild test --flake ${config.home.homeDirectory}/Workspaces/Config/nixos --impure";
+      home-rebuild = "home-manager switch --flake ${config.home.homeDirectory}/Workspaces/Config/nixos";
       generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       
       # === TMUX WORKFLOW (Enhanced) ===
@@ -114,8 +114,8 @@
       web = "cd ${config.home.homeDirectory}/Workspaces/Web";
       app = "cd ${config.home.homeDirectory}/Workspaces/App";
       lc = "cd ${config.home.homeDirectory}/Workspaces/leetcode";
-      docs = "cd ~/Documents";
-      down = "cd ~/Downloads";
+      docs = "cd ${config.home.homeDirectory}/Documents";
+      down = "cd ${config.home.homeDirectory}/Downloads";
       
       # === QUICK UTILITIES ===
       cls = "clear";
