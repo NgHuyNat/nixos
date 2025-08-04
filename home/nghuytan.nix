@@ -3,7 +3,8 @@
 {
   # === IMPORT SHARED CONFIGURATION ===
   imports = [ 
-    ./default.nix         # Import shared home configuration for all users
+    ./default.nix            # Import shared home configuration for all users
+    ./shared/config-paths.nix # Dynamic config path detection system
   ];
 
   # === USER INFORMATION ===
