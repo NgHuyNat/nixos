@@ -2,6 +2,66 @@
 
 Cấu hình NixOS hoàn chỉnh với Hyprland, Home Manager và Flakes cho một hệ thống desktop hiện đại.
 
+## ⚠️ QUAN TRỌNG: Deployment Instructions
+
+### 🚨 TRƯỚC KHI CÀI ĐẶT
+1. **Backup dữ liệu quan trọng** 
+2. **Đảm bảo có USB rescue** để phục hồi nếu cần
+3. **Hardware configuration sẽ được auto-generate** - không sử dụng file có sẵn
+
+### 🎯 Cài đặt trên máy thật (Recommended)
+
+```bash
+# 1. Boot từ NixOS ISO và kết nối mạng
+sudo systemctl start NetworkManager
+nmtui  # Hoặc kết nối WiFi
+
+# 2. Phân vùng ổ cứng (ví dụ /dev/sda)
+sudo fdisk /dev/sda
+# Tạo: 500MB EFI (type 1), phần còn lại Linux (type 20)
+
+# 3. Format phân vùng
+sudo mkfs.fat -F 32 -n boot /dev/sda1
+sudo mkfs.ext4 -L nixos-root /dev/sda2
+
+# 4. Mount filesystems
+sudo mount /dev/disk/by-label/nixos-root /mnt
+sudo mkdir -p /mnt/boot
+sudo mount /dev/disk/by-label/boot /mnt/boot
+
+# 5. Generate hardware config
+sudo nixos-generate-config --root /mnt
+
+# 6. Clone configuration
+cd /mnt/etc/nixos
+sudo rm configuration.nix hardware-configuration.nix
+sudo git clone https://github.com/NgHuyNat/nixos.git .
+sudo nixos-generate-config --root /mnt --force  # Overwrite với hardware thật
+
+# 7. Install NixOS
+sudo nixos-install --flake .#default
+
+# 8. Reboot và setup user
+sudo reboot
+# Login với user đã tạo, home manager sẽ tự setup
+```
+
+### 🔧 Troubleshooting Deployment Issues
+
+**Đen màn hình sau khi login:**
+- Kiểm tra NVIDIA drivers: `nvidia-smi`
+- Switch to TTY: `Ctrl+Alt+F2`
+- Rebuild config: `sudo nixos-rebuild switch --flake /etc/nixos#default`
+
+**Scripts không tìm thấy:**
+- Config có system tự động detect paths
+- Restart để load environment variables
+- Kiểm tra: `echo $NIXOS_CONFIG_PATH`
+
+**Hyprland không start:**
+- Fallback to X11: login với session khác từ SDDM
+- Check logs: `journalctl -u display-manager`
+
 ## 📋 Tổng quan
 
 Đây là cấu hình NixOS hoàn chỉnh bao gồm:
