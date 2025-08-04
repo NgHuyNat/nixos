@@ -218,26 +218,15 @@ cd nixos
 
 ```bash
 # Backup cấu hình cũ của repo
-cp hardware-configuration.nix hardware-configuration.nix.old
 cp /etc/nixos/configuration.nix ./configuration.nix.backup
 
 # So sánh hardware config
 echo "🔍 So sánh hardware configurations..."
 echo "Hardware config từ /etc/nixos/:"
 sudo cat /etc/nixos/hardware-configuration.nix | grep -E "(device|fsType)"
-echo ""
-echo "Hardware config từ repo:"
-cat hardware-configuration.nix.old | grep -E "(device|fsType)"
 
-# Nếu hardware config trong repo (.old) đúng hơn, sử dụng nó
-echo "💡 Nếu hardware config .old đúng với máy hiện tại:"
-cp hardware-configuration.nix.old hardware-configuration.nix
+cp /etc/nixos/hardware-configuration.nix hardware-configuration.nix
 
-# Nếu hardware config từ /etc/nixos/ đúng hơn, sử dụng nó  
-echo "💡 Nếu hardware config từ /etc/nixos/ đúng hơn:"
-echo "sudo cp /etc/nixos/hardware-configuration.nix ."
-
-# Kiểm tra hardware config mới
 cat hardware-configuration.nix
 
 # Xác nhận hardware config đã đúng

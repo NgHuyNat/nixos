@@ -8,7 +8,7 @@
 
   # === USER INFORMATION ===
   home.username = "nghuytan";            # Username for this configuration
-  home.homeDirectory = "/home/nghuytan"; # User's home directory path
+  home.homeDirectory = "/home/${config.home.username}"; # User's home directory path
   home.stateVersion = "25.05";        # Home Manager version (should match NixOS)
 
   # === USER-SPECIFIC GIT CONFIGURATION ===
@@ -66,14 +66,14 @@
         # Synchronize Documents folder across devices
         "Documents" = {
           id = "documents";                     # Unique folder identifier
-          path = "/home/nghuytan/Documents";       # Local folder path
+          path = "${config.home.homeDirectory}/Documents";       # Local folder path
           devices = [ "laptop" "desktop" ];     # Devices to sync with
         };
         
         # Synchronize Workspaces folder for development projects
         "Workspaces" = {
           id = "workspaces";                    # Unique folder identifier
-          path = "/home/nghuytan/Workspaces";      # Local folder path
+          path = "${config.home.homeDirectory}/Workspaces";      # Local folder path
           devices = ["desktop" "laptop"];       # Devices to sync with
         };
       };

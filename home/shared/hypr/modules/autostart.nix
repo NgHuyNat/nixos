@@ -42,10 +42,10 @@
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
         
         # GTK themes (custom script)
-        "~/.config/viegphunt/gtkthemes.sh"
+        "$HOME/.config/viegphunt/gtkthemes.sh"
 
         # Matugen
-        "~/.config/matugen/scripts/matugen-apply $(cat ~/Workspaces/Config/nixos/current_wallpaper)"
+        "$HOME/.config/matugen/scripts/matugen-apply $(cat $HOME/Workspaces/Config/nixos/current_wallpaper)"
 
         # Setup fcitx5
         "export GTK_IM_MODULE=fcitx5"
