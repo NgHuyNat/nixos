@@ -18,15 +18,8 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        # External Full HD monitor (DisplayPort) - Primary, 180Hz
-        "DP-2, 1920x1080@180, 0x0, 1"
-        # Laptop internal display (Full HD) - Secondary, positioned to the right, 144Hz
-        "eDP-1, 1920x1080@144, 1920x0, 1"
-        # Fallback auto-detect for any other monitors
+        # Safe auto-detect for all monitors - VM compatible
         ", preferred, auto, 1"
-        # Alternative external monitor connections
-        # "HDMI-A-1, 1920x1080@180, 0x0, 1"
-        # "DP-1, 1920x1080@180, 0x0, 1"
       ];
     };
   };
