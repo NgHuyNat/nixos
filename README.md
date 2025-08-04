@@ -326,6 +326,75 @@ nano home/shared/git.nix
 
 ## 🔧 Troubleshooting
 
+### ⚫ Màn hình đen sau khi login (Hyprland issue)
+
+**Triệu chứng**: Login thành công nhưng màn hình đen, không vào được desktop
+
+**Giải pháp**:
+
+1. **Thử truy cập TTY khác**:
+   ```
+   Ctrl + Alt + F1/F3/F4/F5/F6
+   ```
+
+2. **Nếu TTY không hoạt động trong VM**:
+   - VirtualBox: Machine → Insert Ctrl+Alt+Del
+   - VMware: Send Ctrl+Alt+Del
+   - Reboot và boot vào Recovery Mode
+
+3. **Boot Recovery Mode**:
+   - Trong GRUB, nhấn `e` để edit
+   - Thêm `single` vào cuối dòng linux
+   - Nhấn `Ctrl + X` để boot
+
+4. **Disable Hyprland tạm thời**:
+   ```bash
+   # Edit desktop config
+   sudo nano /etc/nixos/desktop/default.nix
+   
+   # Comment out hyprland.nix:
+   imports = [
+     # ./hyprland.nix  # Tạm disable
+     ./audio.nix
+     ./graphics.nix
+     ./fonts.nix
+   ];
+   
+   # Thêm GNOME tạm thời
+   sudo nano /etc/nixos/configuration.nix
+   # Thêm:
+   services.xserver.enable = true;
+   services.xserver.displayManager.gdm.enable = true;
+   services.xserver.desktopManager.gnome.enable = true;
+   
+   # Rebuild
+   sudo nixos-rebuild switch
+   ```
+
+5. **Fix Hyprland cho VM**:
+   ```bash
+   # Thêm vào configuration.nix:
+   environment.variables = {
+     WLR_NO_HARDWARE_CURSORS = "1";
+     WLR_RENDERER_ALLOW_SOFTWARE = "1";
+   };
+   
+   # Force software rendering
+   hardware.opengl.driSupport = true;
+   ```
+
+6. **Boot từ USB và chroot**:
+   ```bash
+   # Mount và chroot
+   sudo mount /dev/sda2 /mnt
+   sudo mount /dev/sda1 /mnt/boot
+   sudo nixos-enter --root /mnt
+   
+   # Xem logs
+   journalctl -xe | tail -50
+   systemctl status display-manager
+   ```
+
 ### Lỗi rebuild
 ```bash
 # Xem log chi tiết
