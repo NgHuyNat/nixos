@@ -18,7 +18,7 @@
   outputs = { self, nixpkgs, home-manager, hyprland, ... }: {
     nixosConfigurations = {
       # Main system configuration (default)
-      nixos = nixpkgs.lib.nixosSystem {
+      default = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux"; # Target architecture
         modules = [
           ./configuration.nix # Main system configuration
