@@ -21,7 +21,7 @@
 
     "custom/tty" = {
       format = " ";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/WaybarScripts.sh --term";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/WaybarScripts.sh --term";
       tooltip = true;
       tooltip-format = "Launch Terminal";
     };
@@ -35,7 +35,7 @@
 
     "custom/settings" = {
       format = " ";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/Kool_Quick_Settings.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/Kool_Quick_Settings.sh";
       tooltip = true;
       tooltip-format = "Launch KooL Hyprland Settings Menu";
     };
@@ -44,22 +44,22 @@
       format = " ";
       on-click = "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh";
       on-click-right = "$HOME/.config/hypr/UserScripts/WallpaperRandom.sh";
-      on-click-middle = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh";
+      on-click-middle = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh";
       tooltip = true;
       tooltip-format = "Left Click: Wallpaper Menu\nMiddle Click: Random wallpaper\nRight Click: Waybar Styles Menu";
     };
 
     "custom/hint" = {
       format = "󰺁 HINT!";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/key-hints.sh";
-      on-click-right = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/key-binds.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/key-hints.sh";
+      on-click-right = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/key-binds.sh";
       tooltip = true;
       tooltip-format = "Left Click: Quick Tips\nRight Click: Keybinds";
     };
 
     "custom/dot_update" = {
       format = " 󰁈 ";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/KooLsDotsUpdate.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/KooLsDotsUpdate.sh";
       tooltip = true;
       tooltip-format = "Check KooL Dots update\nIf available";
     };
@@ -71,8 +71,8 @@
       escape = true;
       exec-on-event = true;
       interval = 60;
-      exec = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh status";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh toggle";
+      exec = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh status";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/hypridle.sh toggle";
       on-click-right = "hyprlock";
     };
 
@@ -80,13 +80,13 @@
       exec = "cat $HOME/.cache/kb_layout";
       interval = 1;
       format = " {}";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/switch-keyboard-layout.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/switch-keyboard-layout.sh";
     };
 
     "custom/light_dark" = {
       format = "󰔎 ";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/dark-light.sh";
-      on-click-right = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/dark-light.sh";
+      on-click-right = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh";
       on-click-middle = "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh";
       tooltip = true;
       tooltip-format = "Left Click: Switch Dark-Light Themes\nMiddle Click: Wallpaper Menu\nRight Click: Waybar Styles Menu";
@@ -94,7 +94,7 @@
 
     "custom/lock" = {
       format = "󰌾";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/LockScreen.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/LockScreen.sh";
       tooltip = true;
       tooltip-format = "󰷛 Screen Lock";
     };
@@ -103,14 +103,14 @@
       format = "  ";
       on-click = "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window";
       on-click-middle = "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh";
-      on-click-right = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-layout.sh";
+      on-click-right = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-layout.sh";
       tooltip = true;
       tooltip-format = "Left Click: Rofi Menu\nMiddle Click: Wallpaper Menu\nRight Click: Waybar Layout Menu";
     };
 
     # Custom cava visualizer
     "custom/cava_mviz" = {
-      exec = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybarcava.sh";
+      exec = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybarcava.sh";
       format = "{}";
     };
 
@@ -123,15 +123,15 @@
       on-click = "playerctl previous";
       on-click-right = "playerctl next";
       scroll-step = 5.0;
-      on-scroll-up = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
-      on-scroll-down = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";
+      on-scroll-up = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
+      on-scroll-down = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";
       smooth-scrolling-threshold = 1;
     };
 
     "custom/power" = {
       format = "⏻";
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh";
-      on-click-right = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/change-blur.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh";
+      on-click-right = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/change-blur.sh";
       tooltip = true;
       tooltip-format = "Logout Menu";
     };
@@ -177,7 +177,7 @@
       exec = "checkupdates | wc -l";
       exec-if = "[[ $(checkupdates | wc -l) ]]";
       interval = 43200; # 12 hours interval
-      on-click = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/Distro_update.sh";
+      on-click = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/Distro_update.sh";
       tooltip = true;
       tooltip-format = "Left Click: Update System\nArch (w/ notification)\nFedora, OpenSuse, Debian/Ubuntu click to update";
     };

@@ -108,12 +108,12 @@
       ];
 
       bindel = [
-        ", XF86AudioRaiseVolume, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc"
-        ", XF86AudioLowerVolume, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec"
-        ", XF86AudioMute, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --toggle"
+        ", XF86AudioRaiseVolume, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc"
+        ", XF86AudioLowerVolume, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec"
+        ", XF86AudioMute, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --toggle"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ", XF86MonBrightnessUp, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --inc"
-        ", XF86MonBrightnessDown, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --dec"
+        ", XF86MonBrightnessUp, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --inc"
+        ", XF86MonBrightnessDown, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --dec"
       ];
     };
   };

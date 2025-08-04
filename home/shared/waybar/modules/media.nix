@@ -10,8 +10,8 @@
       on-click = "playerctl previous";
       on-click-right = "playerctl next";
       scroll-step = 5.0;
-      on-scroll-up = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
-      on-scroll-down = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";
+      on-scroll-up = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
+      on-scroll-down = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";
       smooth-scrolling-threshold = 1;
       tooltip = true;
       tooltip-format = "{status_icon} {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next";

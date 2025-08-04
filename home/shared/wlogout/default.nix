@@ -3,7 +3,7 @@
 
 let
   # Đường dẫn tới script hyprlock
-  hyprLockScript = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh";
+  hyprLockScript = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh";
 in
 {
   # Cài đặt wlogout và dependencies
@@ -69,7 +69,7 @@ in
         font-family: "JetBrains Mono NFM";
     }
     
-    @import "/home/nghuytan/Workspaces/Config/nixos/colors/waybar.css";
+    @import "${config.home.homeDirectory}/Workspaces/Config/nixos/colors/waybar.css";
     
     window {
         background-color: rgba(17, 17, 17, 0.45);

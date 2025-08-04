@@ -15,7 +15,7 @@
       format-icons = [
         "󰤯" "󰤟" "󰤢" "󰤥" "󰤨"
       ];
-      on-click-right = "~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-scripts.sh --nmtui";
+      on-click-right = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-scripts.sh --nmtui";
     };
 
     "network#speed" = {
