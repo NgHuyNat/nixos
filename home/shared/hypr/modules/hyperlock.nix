@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       source = "colors.conf";
-      "$Scripts" = "~/Workspaces/Config/nixos/home/shared/hypr/scripts";
+      "$Scripts" = "$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts";
 
       general = {
         grace = 1;
@@ -18,8 +18,8 @@
           monitor = "";
           # NOTE: use only 1 path
           # path = "screenshot";   # screenshot of your desktop
-          # path = "~/Workspaces/Config/nixos/home/shared/hypr/wallpaper_effects/.wallpaper_modified"; # by wallpaper effects
-          path = "/home/nghuytan/Workspaces/Config/nixos/current_wallpaper"; # CURRENT WALLPAPER
+          # path = "$HOME/Workspaces/Config/nixos/home/shared/hypr/wallpaper_effects/.wallpaper_modified"; # by wallpaper effects
+          path = "${config.home.homeDirectory}/Workspaces/Config/nixos/current_wallpaper"; # CURRENT WALLPAPER
           
           color = "rgb(0,0,0)"; # color will be rendered initially until path is available
 

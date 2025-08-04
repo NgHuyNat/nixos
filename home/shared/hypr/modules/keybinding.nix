@@ -38,15 +38,15 @@
         "$mainMod Shift, S, exec, hyprshot -m region -o $HOME/Pictures/Screenshots"
         "$mainMod, PERIOD, exec, rofi -show emoji" # Select emoji
         "$mainMod, V, exec, cliphist list | rofi -dmenu -p \"Clipboard\" | cliphist decode | wl-copy"
-        "$mainMod, R, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/wbrestart.sh"
-        "$mainMod, L, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh"
-        "$mainMod SHIFT, L, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh"
-        # "$mainMod SHIFT, S, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/screenshot.sh"
-        "$mainMod, W, exec, ~/Workspaces/Config/nixos/home/shared/matugen/scripts/wppicker.sh"
-        "$mainMod SHIFT, Q, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/kill-active-process.sh"
-        # "$mainMod CTRL, B, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh" # Waybar Styles Menu
-        # "$mainMod ALT, B, exec, ~/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-layout.sh" # Waybar Layout Menu
-        "$mainMod SHIFT, W, exec, matugen-apply $(cat ~/Workspaces/Config/nixos/current_wallpaper)"
+        "$mainMod, R, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/wbrestart.sh"
+        "$mainMod, L, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh"
+        "$mainMod SHIFT, L, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh"
+        # "$mainMod SHIFT, S, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/screenshot.sh"
+        "$mainMod, W, exec, $HOME/Workspaces/Config/nixos/home/shared/matugen/scripts/wppicker.sh"
+        "$mainMod SHIFT, Q, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/kill-active-process.sh"
+        # "$mainMod CTRL, B, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh" # Waybar Styles Menu
+        # "$mainMod ALT, B, exec, $HOME/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-layout.sh" # Waybar Layout Menu
+        "$mainMod SHIFT, W, exec, matugen-apply $(cat $HOME/Workspaces/Config/nixos/current_wallpaper)"
         "$mainMod SHIFT, R, exec, matugen-apply" # Sẽ prompt chọn wallpaper
         
         "$mainMod, left, movefocus, h"

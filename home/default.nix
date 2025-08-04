@@ -78,7 +78,7 @@
     # SSH agent configuration for key management
     extraConfig = ''
       AddKeysToAgent yes  # Automatically add SSH keys to agent
-      IdentityFile ~/.ssh/id_ed25519  # Default SSH key file
+      IdentityFile ${config.home.homeDirectory}/.ssh/id_ed25519  # Default SSH key file
       Host *
         AddKeysToAgent yes  # Automatically add SSH keys to agent
     '';
