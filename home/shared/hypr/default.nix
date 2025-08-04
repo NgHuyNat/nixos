@@ -11,29 +11,24 @@
 
 {
   imports = [
-    # === MINIMAL CONFIG FOR DEBUGGING ===
-    ./minimal.nix
-    
-    # === FULL CONFIG (COMMENTED OUT FOR DEBUG) ===
-    # ./modules/animation.nix
-    # ./modules/autostart.nix
-    # ./modules/appearance.nix
-    # ./modules/environment.nix
-    # ./modules/input.nix
-    # ./modules/keybinding.nix
-    # ./modules/layout.nix
-    # ./modules/misc.nix
-    # ./modules/monitors.nix
-    # ./modules/programs.nix
-    # ./modules/tags.nix
-    # ./modules/windowrule.nix
-    # ./modules/workspaces.nix
-    # ./modules/colors.nix
+    ./modules/animation.nix
+    ./modules/autostart.nix
+    ./modules/appearance.nix
+    ./modules/environment.nix
+    ./modules/input.nix
+    ./modules/keybinding.nix
+    ./modules/layout.nix
+    ./modules/misc.nix
+    ./modules/monitors.nix
+    ./modules/programs.nix
+    ./modules/tags.nix
+    ./modules/windowrule.nix
+    ./modules/workspaces.nix
+    ./modules/colors.nix
   ];
 
-  # Enable Hyprland (config is now in minimal.nix)
-  # wayland.windowManager.hyprland = {
-  #   enable = true;
-  #   package = pkgs.hyprland;
-  # };
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = pkgs.hyprland;
+  };
 }

@@ -11,22 +11,11 @@
     
     # Additional graphics packages for enhanced functionality
     extraPackages = with pkgs; [
-      # VM-compatible graphics packages
-      mesa                       # Open source graphics drivers
+      nvidia-vaapi-driver        # VA-API driver for hardware video acceleration
       vulkan-loader              # Vulkan graphics API loader
       vulkan-validation-layers   # Vulkan debugging and validation
-      # nvidia-vaapi-driver      # Disabled for VM compatibility
-    ];
-    
-    # Force software rendering for VM
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      mesa
     ];
   };
-
-  # === VM-SPECIFIC GRAPHICS CONFIGURATION ===
-  # Disable NVIDIA-specific settings for VM compatibility
-  # services.xserver.videoDrivers = [ "modesetting" ];  # Use generic modesetting driver
 
   # === NVIDIA DRIVER CONFIGURATION ===
   services.xserver.videoDrivers = ["nvidia"];  # Use NVIDIA proprietary driver

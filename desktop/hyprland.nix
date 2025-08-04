@@ -1,30 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  # === SEAT MANAGEMENT FOR WAYLAND ===
-  services.seatd = {
-    enable = true;
-    user = "root";
-  };
-
-  # === HYPRLAND CONFIGURATION ===
+  # Hyprland system configuration
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-  };
-
-  # === VM-SPECIFIC ENVIRONMENT VARIABLES ===
-  environment.variables = {
-    # Force software rendering for VM compatibility
-    WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE = "1";
-    WLR_BACKEND = "drm,libinput";
-    # Wayland environment
-    QT_QPA_PLATFORM = "wayland";
-    GDK_BACKEND = "wayland,x11";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
   };
 
   # Essential system packages for Hyprland
