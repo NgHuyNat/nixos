@@ -4,8 +4,7 @@ Cấu hình NixOS hoàn chỉnh với Hyprland, Home Manager và Flakes cho mộ
 
 ## 🔄 Áp dụng cấu hình
 
-Dành cho hệ thống **đã có NixOS** và muốn áp dụng config này:
-
+### 📦 **Hệ thống đã có NixOS sạch**
 ```bash
 # Clone vào ~/.config/nixos (recommended location)
 git clone https://github.com/NgHuyNat/nixos.git ~/.config/nixos
@@ -16,6 +15,29 @@ sudo cp /etc/nixos/hardware-configuration.nix .
 
 # Apply configuration
 sudo nixos-rebuild switch --flake .#default
+```
+
+### 🧹 **Xóa config cũ (JaKooLiT/Hyprland khác)**
+Nếu máy đã có Hyprland config khác và muốn xóa sạch:
+
+```bash
+# Tải script xóa nhanh
+curl -O https://raw.githubusercontent.com/NgHuyNat/nixos/main/clean-nixos.sh
+chmod +x clean-nixos.sh
+
+# Chạy script xóa (sẽ reset về GNOME minimal)
+./clean-nixos.sh
+
+# Reboot
+sudo reboot
+
+# Sau khi reboot, cài config mới
+curl -O https://raw.githubusercontent.com/NgHuyNat/nixos/main/install-config.sh
+chmod +x install-config.sh
+./install-config.sh
+
+# Reboot vào Hyprland
+sudo reboot
 ```
 
 ## 📋 Tổng quan
