@@ -13,7 +13,27 @@ cd ~/.config/nixos
 # Copy hardware configuration từ hệ thống hiện tại
 sudo cp /etc/nixos/hardware-configuration.nix .
 
-# Apply configuration
+# Update flake inputs first (fix common build errors)
+nix flake update
+
+# Apply configuration (may take 20-30 minutes first time)
+sudo nixos-rebuild switch --flake .#default --impure
+```
+
+### ⚠️ **Nếu gặp lỗi build lần đầu**
+```bash
+# Fix 1: Update flake lock
+nix flake update
+
+# Fix 2: Try with --impure flag
+sudo nixos-rebuild switch --flake .#default --impure
+
+# Fix 3: If still fails, check logs
+sudo nixos-rebuild switch --flake .#default --show-trace
+
+# Fix 4: Emergency fallback to older nixpkgs
+sed -i 's/nixos-unstable/nixos-24.05/g' flake.nix
+nix flake update
 sudo nixos-rebuild switch --flake .#default
 ```
 

@@ -85,5 +85,5 @@
   };
 
   # === HOME MANAGER VERSION ===
-  home.stateVersion = "25.05";  # Should match your NixOS release version
+  home.stateVersion = "24.11";  # Should match your NixOS release version
 }

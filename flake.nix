@@ -2,12 +2,12 @@
   description = "My NixOS configuration"; # Main flake description
 
   inputs = {
-    # NixOS packages source - using stable 25.05 release
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    # NixOS packages source - using stable 24.11 release
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     
     # Home Manager for user environment management
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs"; # Use same nixpkgs as system
     };
     
