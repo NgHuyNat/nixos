@@ -83,4 +83,3 @@ sudo nixos-rebuild switch --rollback
 
 ---
 
-*Made with ❤️ by Nghuytan*
