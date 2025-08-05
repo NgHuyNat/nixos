@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # === CONFIG ===
-WALLPAPER_DIR="$HOME/Workspaces/Config/nixos/wallpapers"
-SYMLINK_PATH="$HOME/Workspaces/Config/nixos/current_wallpaper"
+WALLPAPER_DIR="$HOME/.config/nixos/wallpapers"
+SYMLINK_PATH="$HOME/.config/nixos/current_wallpaper"
 
 echo "🔍 Testing write access to: $WALLPAPER_DIR"
 

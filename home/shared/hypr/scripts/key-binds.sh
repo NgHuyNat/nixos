@@ -1,0 +1,36 @@
+#!/run/current-system/sw/bin/bash
+# key-binds.sh - Show detailed key bindings
+
+kitty --title "Key Bindings" -e bash -c "
+echo 'Hyprland Key Bindings:'
+echo '======================'
+echo 'Window Management:'
+echo '  Super + Q         - Close window'
+echo '  Super + F         - Fullscreen'
+echo '  Super + V         - Toggle floating'
+echo '  Super + arrows    - Move focus'
+echo '  Ctrl + arrows     - Move window'
+echo ''
+echo 'Applications:'
+echo '  Super + Return    - Terminal'
+echo '  Super + D         - Rofi launcher'
+echo '  Super + B         - Browser'
+echo '  Super + E         - File manager'
+echo '  Super + C         - Code editor'
+echo ''
+echo 'System:'
+echo '  Super + R         - Restart Waybar'
+echo '  Super + L         - Lock screen'
+echo '  Super + Shift + L - Logout menu'
+echo '  Super + W         - Wallpaper picker'
+echo ''
+echo 'Workspaces:'
+echo '  Super + 1-9       - Switch workspace'
+echo '  Super + Shift + 1-9 - Move to workspace'
+echo ''
+echo 'Media:'
+echo '  Volume keys       - Volume control'
+echo '  Brightness keys   - Brightness control'
+echo ''
+read -p \"Press Enter to close...\"
+"

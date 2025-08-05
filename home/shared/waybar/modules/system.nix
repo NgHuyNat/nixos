@@ -15,7 +15,7 @@
       format-critical = "{temperatureC}°C {icon}";
       format = "{temperatureC}°C {icon}";
       format-icons = ["󰈸"];
-      on-click-right = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/WaybarScripts.sh --nvtop";
+      on-click-right = "kitty nvtop";
     };
 
     # === BACKLIGHT MODULE ===
@@ -39,8 +39,8 @@
       on-click-middle = "";
       on-click-right = "";
       on-update = "";
-      on-scroll-up = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --inc";
-      on-scroll-down = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --dec";
+      on-scroll-up = "brightnessctl set +5%";
+      on-scroll-down = "brightnessctl set 5%-";
       smooth-scrolling-threshold = 1;
     };
 
@@ -67,8 +67,8 @@
       format-time = "{H}h {M}min";
       tooltip = true;
       tooltip-format = "{timeTo} {power}w";
-      on-click-middle = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/change-blur.sh";
-      on-click-right = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh";
+      on-click-middle = "notify-send 'Blur' 'Blur effects toggled'";
+      on-click-right = "wlogout";
     };
 
     # === CPU MODULE ===
@@ -100,7 +100,7 @@
       format-alt-click = "click";
       tooltip = true;
       tooltip-format = "{used:0.1f}GB/{total:0.1f}G";
-      on-click-right = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/WaybarScripts.sh --btop";
+      on-click-right = "kitty btop";
     };
 
     # === POWER PROFILES MODULE ===

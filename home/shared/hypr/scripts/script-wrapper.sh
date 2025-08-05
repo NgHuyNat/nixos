@@ -7,7 +7,7 @@ if [ -f "$HOME/.config/nixos-paths.env" ]; then
 fi
 
 # Fallback paths if detection failed
-NIXOS_CONFIG_PATH="${NIXOS_CONFIG_PATH:-$HOME/Workspaces/Config/nixos}"
+NIXOS_CONFIG_PATH="${NIXOS_CONFIG_PATH:-$HOME/.config/nixos}"
 NIXOS_SCRIPTS_PATH="${NIXOS_SCRIPTS_PATH:-$NIXOS_CONFIG_PATH/home/shared/hypr/scripts}"
 
 # Function to find and execute script

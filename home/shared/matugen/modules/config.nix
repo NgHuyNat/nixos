@@ -12,49 +12,49 @@
       set = true
 
       [templates.waybar]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/colors.css'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/waybar.css'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/colors.css'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/waybar.css'
       post_hook = 'pkill -SIGUSR2 waybar'
 
       [templates.swaync]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/colors.css'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/swaync.css'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/colors.css'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/swaync.css'
       post_hook = 'pkill -SIGUSR2 swaync'
 
       [templates.kitty]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/kitty.conf'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/kitty.conf'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/kitty.conf'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/kitty.conf'
       post_hook = "kill -SIGUSR1 $(pidof kitty)"
 
       [templates.hyprland]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/hyprland.conf'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/hypr.conf'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/hyprland.conf'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/hypr.conf'
       post_hook = 'hyprctl reload'
 
       [templates.gtk3]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/gtk.css'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/gtk.css'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/gtk.css'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/gtk.css'
 
       [templates.gtk4]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/gtk.css'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/gtk.css'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/gtk.css'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/gtk.css'
 
       [templates.rofi]
-      input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/rofi.rasi'
-      output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/rofi.rasi'
+      input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/rofi.rasi'
+      output_path = '${config.home.homeDirectory}/.config/nixos/colors/rofi.rasi'
 
       # [templates.cava]
-      # input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/cava'
-      # output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/cava.config'
+      # input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/cava'
+      # output_path = '${config.home.homeDirectory}/.config/nixos/colors/cava.config'
       # post_hook = "pkill -SIGUSR2 cava"
 
       # [templates.spicetify]
-      # input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/spotify.ini'
-      # output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/spotify.ini'
+      # input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/spotify.ini'
+      # output_path = '${config.home.homeDirectory}/.config/nixos/colors/spotify.ini'
 
       # [templates.vesktop]
-      # input_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/templates/midnight-discord.css'
-      # output_path = '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/vesktop.css'
+      # input_path = '${config.home.homeDirectory}/.config/nixos/home/shared/matugen/templates/midnight-discord.css'
+      # output_path = '${config.home.homeDirectory}/.config/nixos/colors/vesktop.css'
     '';
 
     # Các template được đọc từ file riêng

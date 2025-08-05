@@ -71,11 +71,11 @@
           "actions" = [
             {
               "label" = "󰐥";
-              "command" = "bash -c ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh";
+              "command" = "wlogout";
             }
             {
               "label" = "󰌾";
-              "command" = "bash -c ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh";
+              "command" = "hyprlock";
             }
             {
               "label" = "󰍃";
@@ -83,7 +83,7 @@
             }
             {
               "label" = "󰀝";
-              "command" = "bash -c ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/airplane-mode.sh";
+              "command" = "rfkill toggle all";
             }
             {
               "label" = "󰝟";
@@ -96,7 +96,13 @@
 
     # CSS styling
     style = ''
-      @import '${config.home.homeDirectory}/Workspaces/Config/nixos/colors/swaync.css';
+      /* Custom colors - fallback if theme files don't exist */
+      @define-color text            #ffffff;
+      @define-color background      #1a1a1a;
+      @define-color background-alt  #2a2a2a;
+      @define-color selected        #4a4a4a;
+      @define-color hover           #3a3a3a;
+      @define-color urgent          #ff6b6b;
 
       /* Control Center Styles */
       @define-color text            @on_surface;

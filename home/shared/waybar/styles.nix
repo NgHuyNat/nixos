@@ -8,7 +8,27 @@
   };
 
   config.waybar.customStyles = ''
-    @import "${config.home.homeDirectory}/Workspaces/Config/nixos/colors/waybar.css";
+        "${configPath}/dotfiles/colors/waybar.css" = {
+      text = builtins.readFile (configPath + "/colors/waybar.css") or '''
+        /* Default waybar styling if color file doesn't exist */
+        @define-color background #1a1a1a;
+        @define-color foreground #ffffff;
+        @define-color primary #4a9eff;
+        @define-color urgent #ff6b6b;
+        @define-color warning #ffa726;
+        
+        * {
+          font-family: "JetBrains Mono Nerd Font";
+          font-size: 13px;
+          color: @foreground;
+        }
+        
+        window#waybar {
+          background: @background;
+          color: @foreground;
+        }
+      ''';
+    };
 
     /* === FONT CONFIGURATION === */
     * {

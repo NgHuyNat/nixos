@@ -34,7 +34,7 @@ if vim.fn.isdirectory(config_path) == 1 then
 elseif not (uname.sysname == "Darwin" and hostname == "nghuytan") then
     -- Fallback cho các hệ thống khác - use absolute path with $HOME
     local home = os.getenv("HOME") or ""
-    lazy_opts.lockfile = home .. "/Workspaces/Config/nixos/dotfiles/nvim/lazy-lock.json"
+    lazy_opts.lockfile = home .. "/.config/nixos/dotfiles/nvim/lazy-lock.json"
 end
 
 require("lazy").setup("plugins", lazy_opts)

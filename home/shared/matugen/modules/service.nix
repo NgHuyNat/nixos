@@ -11,7 +11,7 @@
     
     Service = {
       Type = "oneshot";
-      ExecStart = "${pkgs.matugen}/bin/matugen image ${config.home.homeDirectory}/Workspaces/Config/nixos/current_wallpaper";
+      ExecStart = "${pkgs.matugen}/bin/matugen image ${config.home.homeDirectory}/.config/nixos/current_wallpaper";
       Environment = [ "PATH=${pkgs.swww}/bin:${pkgs.waybar}/bin:${pkgs.hyprland}/bin:${pkgs.cava}/bin" ];
     };
     

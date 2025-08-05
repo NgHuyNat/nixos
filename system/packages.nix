@@ -45,6 +45,20 @@
     file      # File type identification utility
     which     # Locate command binary in PATH
     tree      # Display directory structure in tree format
+    
+    # === AUDIO/MEDIA UTILITIES ===
+    pamixer      # PulseAudio mixer for volume control
+    brightnessctl # Brightness control utility
+    hyprshot     # Screenshot tool for Hyprland
+    wl-clipboard # Wayland clipboard utilities
+    cliphist     # Clipboard history manager
+    
+    # === NOTIFICATION SYSTEM ===
+    libnotify    # Desktop notification library
+    
+    # === DISPLAY UTILITIES ===
+    wlogout      # Logout menu for Wayland
+    hyprlock     # Screen locker for Hyprland
   ];
   
   # Allow installation of proprietary software (required for some development tools)

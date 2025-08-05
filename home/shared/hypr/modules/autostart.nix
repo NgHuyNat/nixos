@@ -45,7 +45,7 @@
         "${config.home.homeDirectory}/.config/viegphunt/gtkthemes.sh"
 
         # Matugen
-        "${config.home.homeDirectory}/.config/matugen/scripts/matugen-apply $(cat ${config.home.homeDirectory}/Workspaces/Config/nixos/current_wallpaper)"
+        "${config.home.homeDirectory}/.config/matugen/scripts/matugen-apply $(cat ${config.home.homeDirectory}/.config/nixos/current_wallpaper)"
 
         # Setup fcitx5
         "export GTK_IM_MODULE=fcitx5"

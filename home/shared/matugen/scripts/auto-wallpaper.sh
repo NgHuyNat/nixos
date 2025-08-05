@@ -1,7 +1,7 @@
 #!/run/current-system/sw/bin/bash
 
-WALLPAPER_DIR="$HOME/Workspaces/Config/nixos/wallpapers"
-SYMLINK_PATH="$HOME/Workspaces/Config/nixos/current_wallpaper"
+WALLPAPER_DIR="$HOME/.config/nixos/wallpapers"
+SYMLINK_PATH="$HOME/.config/nixos/current_wallpaper"
 
 # Kiểm tra thư mục wallpaper tồn tại
 if [ ! -d "$WALLPAPER_DIR" ]; then

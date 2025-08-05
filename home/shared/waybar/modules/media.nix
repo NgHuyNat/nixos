@@ -10,8 +10,8 @@
       on-click = "playerctl previous";
       on-click-right = "playerctl next";
       scroll-step = 5.0;
-      on-scroll-up = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc";
-      on-scroll-down = "${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec";
+      on-scroll-up = "pamixer -i 5";
+      on-scroll-down = "pamixer -d 5";
       smooth-scrolling-threshold = 1;
       tooltip = true;
       tooltip-format = "{status_icon} {dynamic}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next";

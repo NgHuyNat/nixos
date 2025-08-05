@@ -94,10 +94,10 @@
       
       # === SYSTEM MANAGEMENT (Enhanced) ===
       oh = "cd ${config.home.homeDirectory}/ && echo 'Went back home'";
-      config = "cd ${config.home.homeDirectory}/Workspaces/Config/nixos";
-      nixos-rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/Workspaces/Config/nixos --impure";
-      nixos-test = "sudo nixos-rebuild test --flake ${config.home.homeDirectory}/Workspaces/Config/nixos --impure";
-      home-rebuild = "home-manager switch --flake ${config.home.homeDirectory}/Workspaces/Config/nixos";
+      config = "cd ${config.home.homeDirectory}/.config/nixos";
+      nixos-rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/.config/nixos --impure";
+      nixos-test = "sudo nixos-rebuild test --flake ${config.home.homeDirectory}/.config/nixos --impure";
+      home-rebuild = "home-manager switch --flake ${config.home.homeDirectory}/.config/nixos";
       generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       
       # === TMUX WORKFLOW (Enhanced) ===

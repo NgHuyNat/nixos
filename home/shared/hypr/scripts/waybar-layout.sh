@@ -5,9 +5,9 @@
 IFS=$'\n\t'
 
 # Define directories
-waybar_layouts="$HOME/Workspaces/Config/nixos/home/shared/wabar/modules/configs"
-waybar_config="$HOME/Workspaces/Config/nixos/home/shared/wabar/modules/config"
-SCRIPTSDIR="$HOME/Workspaces/Config/nixos/home/shared/hypr/scripts"
+waybar_layouts="$HOME/.config/nixos/home/shared/wabar/modules/configs"
+waybar_config="$HOME/.config/nixos/home/shared/wabar/modules/config"
+SCRIPTSDIR="$HOME/.config/nixos/home/shared/hypr/scripts"
 rofi_config="$HOME/.config/rofi/config.rasi"
 msg=' Choose Waybar Layout '
 

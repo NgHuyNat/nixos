@@ -39,15 +39,15 @@
         "$mainMod Shift, S, exec, hyprshot -m region -o ${config.home.homeDirectory}/Pictures/Screenshots""
         "$mainMod, PERIOD, exec, rofi -show emoji" # Select emoji
         "$mainMod, V, exec, cliphist list | rofi -dmenu -p \"Clipboard\" | cliphist decode | wl-copy"
-        "$mainMod, R, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/wbrestart.sh"
-        "$mainMod, L, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/hyprlock.sh"
-        "$mainMod SHIFT, L, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/wlogout.sh"
-        # "$mainMod SHIFT, S, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/screenshot.sh"
-        "$mainMod, W, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/matugen/scripts/wppicker.sh"
-        "$mainMod SHIFT, Q, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/kill-active-process.sh"
+        "$mainMod, R, exec, pkill waybar; sleep 1; waybar &"
+        "$mainMod, L, exec, hyprlock"
+        "$mainMod SHIFT, L, exec, wlogout"
+        "$mainMod SHIFT, S, exec, hyprshot -m region -o ${config.home.homeDirectory}/Pictures/Screenshots"
+        "$mainMod, W, exec, bash -c 'cd ~/.config/nixos 2>/dev/null && ./home/shared/matugen/scripts/wppicker.sh || rofi -show filebrowser'"
+        "$mainMod SHIFT, Q, exec, hyprctl activewindow | grep pid | tr -d 'pid:' | xargs kill"
         # "$mainMod CTRL, B, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-styles.sh" # Waybar Styles Menu
         # "$mainMod ALT, B, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/waybar-layout.sh" # Waybar Layout Menu
-        "$mainMod SHIFT, W, exec, matugen-apply $(cat ${config.home.homeDirectory}/Workspaces/Config/nixos/current_wallpaper)"
+        "$mainMod SHIFT, W, exec, matugen-apply $(cat ${config.home.homeDirectory}/.config/nixos/current_wallpaper)"
         "$mainMod SHIFT, R, exec, matugen-apply" # Sẽ prompt chọn wallpaper
         
         "$mainMod, left, movefocus, h"
@@ -109,12 +109,12 @@
       ];
 
       bindel = [
-        ", XF86AudioRaiseVolume, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --inc"
-        ", XF86AudioLowerVolume, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --dec"
-        ", XF86AudioMute, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/volume.sh --toggle"
+        ", XF86AudioRaiseVolume, exec, pamixer -i 5"
+        ", XF86AudioLowerVolume, exec, pamixer -d 5"
+        ", XF86AudioMute, exec, pamixer --toggle-mute"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ", XF86MonBrightnessUp, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --inc"
-        ", XF86MonBrightnessDown, exec, ${config.home.homeDirectory}/Workspaces/Config/nixos/home/shared/hypr/scripts/brightness.sh --dec"
+        ", XF86MonBrightnessUp, exec, brightnessctl set +5%"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
       ];
     };
   };

@@ -68,7 +68,7 @@
 
   # === CAVA CONFIGURATION ===
   home.file.".config/cava/config" = {
-    source = "${config.home.homeDirectory}/Workspaces/Config/nixos/colors/cava.config";
+    source = "${config.home.homeDirectory}/.config/nixos/colors/cava.config";
   };
 
   # === SSH CONFIGURATION ===

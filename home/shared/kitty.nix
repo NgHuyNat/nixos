@@ -35,7 +35,7 @@
 
       extraConfig = ''
         # Import color scheme
-        include ${config.home.homeDirectory}/Workspaces/Config/nixos/colors/kitty.conf
+        include ${config.home.homeDirectory}/.config/nixos/colors/kitty.conf
       '';
     };
   };

@@ -3,7 +3,7 @@
 
 let
   # Default config path that can be overridden
-  defaultConfigPath = "${config.home.homeDirectory}/Workspaces/Config/nixos";
+  defaultConfigPath = "${config.home.homeDirectory}/.config/nixos";
   
   # Create a wrapper script for all script executions
   scriptWrapper = pkgs.writeShellScript "nixos-script-wrapper" ''
@@ -101,7 +101,7 @@ in
     
     # Detect actual config path and create environment file
     CONFIG_CANDIDATES=(
-      "$HOME/Workspaces/Config/nixos"
+      "$HOME/.config/nixos"
       "$HOME/.config/nixos"
       "$HOME/nixos-config"
       "$HOME/nixos"

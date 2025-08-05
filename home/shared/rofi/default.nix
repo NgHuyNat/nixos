@@ -10,7 +10,7 @@
 
   xdg.configFile."rofi/config.rasi".text = ''
     @theme "/dev/null"
-    @import "${config.home.homeDirectory}/Workspaces/Config/nixos/colors/rofi.rasi"
+    @import "${config.home.homeDirectory}/.config/nixos/colors/rofi.rasi"
 
     configuration {
     	modi: "window,run,drun";
@@ -53,7 +53,7 @@
     imagebox {
         padding:                     20px;
         background-color:            transparent;
-        background-image:            url("${config.home.homeDirectory}/Workspaces/Config/nixos/current_wallpaper", height);
+        background-image:            url("${config.home.homeDirectory}/.config/nixos/current_wallpaper", height);
         orientation:                 vertical;
         children:                    [ "inputbar", "dummy", "mode-switcher" ];
     }
